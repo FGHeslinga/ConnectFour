@@ -9,3 +9,4 @@ Created on Tue Apr 17 20:43:31 2018
 
 print("Friso is de liefste")
 print("Laura is Lam")
+print("Friso is bijzonder")
