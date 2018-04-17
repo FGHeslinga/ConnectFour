@@ -5,13 +5,10 @@ Created on Tue Apr 17 21:20:13 2018
 @author: Friso & Laura
 """
 
+import numpy as np
+
 # Create playing field
-
-
-
-
-
-
+field = np.zeros([6,7])
 
 
 # Make GUI out of playing field
