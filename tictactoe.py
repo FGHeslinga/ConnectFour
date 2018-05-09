@@ -5,6 +5,7 @@ from: https://codereview.stackexchange.com/questions/19683/tic-tac-toe-game-gui
 
 from tkinter import *
 import random
+import numpy as np
 
 # use a class definition to hold all my functions
 class MyApp(Tk):
@@ -26,6 +27,9 @@ class MyApp(Tk):
                                    state=DISABLED, font=("Helvetica", 16))
         self.myLabel = Label(self, text="<-- Who starts -->", font=("Helvetica", 16))
 
+        #initialize an array of 6 by 7 for the locations of the field
+        self.field = np.zeros([6,7])
+
         #initialize a list to use for my field buttons (note: 0 is not used)
         self.bList = [0,1,2,3,4,5,6,7,8,9]
         #self.bList = [0,1,2,3,4,5,6]
@@ -36,14 +40,16 @@ class MyApp(Tk):
                                    command=lambda j=i: self.do_button(j),
                                    state=DISABLED, relief=RAISED, height=3,
                                    width=7, font=("Helvetica", 24))
-
+        #pady=
         #grid everything into the frame
         fr.grid()
-        self.myLabel.grid(row=0, columnspan=4)
-        self.player_button.grid(row=1, column=0)
-        self.computer_button.grid(row=1, column=2)
-        self.exit_button.grid(row=5, column=0)
-        self.again_button.grid(row=5, column=2)
+        #self.myLabel.grid(row=0, columnspan=4)
+        self.myLabel.grid(row=0, columnspan=3, pady=10)
+        #self.myLabel.grid(row=0, column=1)
+        self.player_button.grid(row=0, column=0, pady=10)
+        self.computer_button.grid(row=0, column=2, pady=10)
+        self.exit_button.grid(row=5, column=0, pady=10)
+        self.again_button.grid(row=5, column=2, pady=10)
 
         #use a loop to grid the field buttons
         myL = [[1,4,0], [2,4,1], [3,4,2],  #button number, row, column
