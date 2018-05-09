@@ -17,25 +17,22 @@ class MyApp(Tk):
         fr = Frame(self)
 
         #intialize operation buttons and the label
-        self.player_button = Button(self, text="Me",
-                                    command=lambda: self.do_start(TRUE),
-                                    font=("Helvetica", 16))
+        self.player_button = Button(self, text="Player", 
+                                    command=lambda: self.do_start(TRUE), font=("Helvetica", 16))
         self.computer_button = Button(self, text="Computer",
-                                      command=lambda: self.do_start(FALSE),
-                                      font=("Helvetica", 16))
-        self.exit_button = Button(self, text="Exit", command=self.do_exit,
-                                  font=("Helvetica", 16))
+                                      command=lambda: self.do_start(FALSE), font=("Helvetica", 16))
+        self.exit_button = Button(self, text="Exit", command=self.do_exit,  font=("Helvetica", 16))
         self.again_button = Button(self, text="again?", command=self.do_again,
-                                   state=DISABLED,
-                                   font=("Helvetica", 16))
-        self.myLabel = Label(self, text="Who starts?", font=("Helvetica", 16))
+                                   state=DISABLED, font=("Helvetica", 16))
+        self.myLabel = Label(self, text="<-- Who starts -->", font=("Helvetica", 16))
 
         #initialize a list to use for my field buttons (note: 0 is not used)
         self.bList = [0,1,2,3,4,5,6,7,8,9]
-
+        #self.bList = [0,1,2,3,4,5,6]
+        
         #use a loop to build my field buttons
         for i in range(1,10):
-            self.bList[i] = Button(self, text="---",  #bList now button references
+            self.bList[i] = Button(self,   #bList now button references
                                    command=lambda j=i: self.do_button(j),
                                    state=DISABLED, relief=RAISED, height=3,
                                    width=7, font=("Helvetica", 24))
